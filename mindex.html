@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/dateRange.css"/>
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css"> 
+		<link rel="stylesheet" type="text/css" href="css/mIndex.css"/>
+	</head>
+	<body>
+		<div class="mFlow">
+			<div class="mFlow_title">
+				<h1>中工信融(北京)信息技术有限公司</h1>
+				<p>开通时间2018年10月7日</p>
+				<div class="line"></div>
+				<ul class="mFlow_list">
+					<li><a href="javascript:void(0)" class="action">全部</a></li>
+					<li><a href="javascript:void(0)">昨天</a></li>
+					<li><a href="javascript:void(0)">今天</a></li>
+					<li><a href="javascript:void(0)">最近七天</a></li>
+					<li><a href="javascript:void(0)">最近30天</a></li>
+				</ul>
+			</div>
+			<!---->
+			<div class="mFlow_from">
+				<div class="mFlow_from_input">
+					<div>
+						<i  class="iconfont icon-riqi"></i>
+						<input type="text" placeholder="开始时间 - 结束时间" id="haoroomsinput"/>
+					</div>
+					<a href="javascript:void(0)" id="brokenLineAbt">更新数据</a>
+				</div>
+				<ul class="mFlow_from_list">
+					<li>
+						<h1>35,465</h1>
+						<p><i class="iconfont icon-dianjiliang"></i>点击量/次</p>
+					</li>
+					<li>
+						<h1>35,465</h1>
+						<p><i class="iconfont icon-shangji"></i>商机数/条</p>
+					</li>
+					<li>
+						<h1>35,465</h1>
+						<p><i class="iconfont icon-kehuzhuanhuashuai"></i>转化率/%</p>
+					</li>
+				</ul>
+			</div>
+			<!---->
+			<div class="mFlow_brokenLine">
+				<div id="container"></div>
+			</div>
+			<!---->
+			<div class="mFlow_hr"></div>
+			<!---->
+			<div class="hotSpot">
+				<div class="title_body">
+					<p>Regional flow heat map</p>
+					<h1>区域流量排名</h1>
+				</div>
+				<div class="hotSpot_map">
+					<div id="map" style="display: none;"></div>
+					<div class="hotSpot_mapTop">
+						<h2>全国</h2>
+						<h1>32,678</h1>
+						<p>总点击浏览量</p>
+					</div>
+				</div>
+				<img src="img/mapbg.png" class="hotSpot_bg1"/>
+				<img src="img/mapbg.png" class="hotSpot_bg2"/>
+				<img src="img/mapbg.png" class="hotSpot_bg3"/>
+			</div>
+			<div class="hotSpot_mapList swiper-containe swiper1">
+				<ul class="swiper-wrapper">
+					<li class="swiper-slide">
+						<h1><i></i>北京市</h1>
+						<p>243,200</p>
+					</li>
+					<li class="swiper-slide">
+						<h1><i></i>北京市</h1>
+						<p>243,200</p>
+					</li>
+					<li class="swiper-slide">
+						<h1><i></i>北京市</h1>
+						<p>243,200</p>
+					</li>
+					<li class="swiper-slide">
+						<h1><i></i>北京市</h1>
+						<p>243,200</p>
+					</li>
+					<li class="swiper-slide">
+						<h1><i></i>北京市</h1>
+						<p>243,200</p>
+					</li>
+					<li class="swiper-slide">
+						<h1><i></i>北京市</h1>
+						<p>243,200</p>
+					</li>
+					<li class="swiper-slide">
+						<h1><i></i>北京市</h1>
+						<p>243,200</p>
+					</li>
+					<li class="swiper-slide">
+						<h1><i></i>北京市</h1>
+						<p>243,200</p>
+					</li>
+				</ul>
+			</div>
+			<div class="hotSpot  searchRanking">
+				<div class="title_body">
+					<p>Regional flow heat map</p>
+					<h1>搜索投放词排名数据</h1>
+				</div>
+				<img src="img/mapbg.png" class="hotSpot_bg1"/>
+				<img src="img/mapbg.png" class="hotSpot_bg2"/>
+				<img src="img/mapbg.png" class="hotSpot_bg3"/>
+			</div>
+			<div class="hotSpot_mapList swiper-containe swiper1"> 
+				<ul class="swiper-wrapper">
+					<li class="swiper-slide">
+						<h1><i></i>1</h1>
+						<p>投放词1</p>
+					</li>
+					<li class="swiper-slide">
+						<h1><i></i>2</h1>
+						<p>投放词1</p>
+					</li>
+					<li class="swiper-slide">
+						<h1><i></i>3</h1>
+						<p>投放词1</p>
+					</li>
+					<li class="swiper-slide">
+						<h1><i></i>4</h1>
+						<p>投放词1</p>
+					</li>
+					<li class="swiper-slide">
+						<h1><i></i>5</h1>
+						<p>投放词1</p>
+					</li>
+					<li class="swiper-slide">
+						<h1><i></i>6</h1>
+						<p>投放词1</p>
+					</li>
+					<li class="swiper-slide">
+						<h1><i></i>7</h1>
+						<p>投放词1</p>
+					</li>
+					<li class="swiper-slide">
+						<h1><i></i>8</h1>
+						<p>投放词1</p>
+					</li>
+					<li class="swiper-slide">
+						<h1><i></i>9</h1>
+						<p>投放词1</p>
+					</li>
+					<li class="swiper-slide">
+						<h1><i></i>10</h1>
+						<p>投放词1</p>
+					</li>
+				</ul>
+			</div>
+			<!---->
+			<div class="mFlow_hr"></div>
+			<!---->
+			<div class="pieChart">
+				<div class="pieChart_title">
+					<div class="title_body">
+						<p>Search engine distribution</p>
+						<h1>搜索引擎分布</h1>
+					</div>
+				</div>
+				<div class="pieChart_body">
+					<div id="pieChart1"></div>
+				</div>
+				<div class="pieChart_bodyT">
+					<div id="pieChart2"></div>
+				</div>
+			</div>
+			<!---->
+			<div class="mFlow_hr"></div>
+			<!---->
+			<div class="radarChart">
+				<div class="title_body">
+					<p>Terminal browser</p>
+					<h1>终端浏览器占比</h1>
+				</div>
+				<div class="radarChart_body_radar">
+					<div id="radarChart"></div>
+				</div>
+				<ul class="radarChart_body_list">
+					<li>
+						<div class="name">Windows 7</div>
+						<div class="number">267</div>
+						<div class="rate">34%</div>
+					</li>
+					<li>
+						<div class="name">Windows 10</div>
+						<div class="number">267</div>
+						<div class="rate">34%</div>
+					</li>
+					<li>
+						<div class="name">Windows XP</div>
+						<div class="number">267</div>
+						<div class="rate">34%</div>
+					</li>
+					<li>
+						<div class="name">Android</div>
+						<div class="number">267</div>
+						<div class="rate">34%</div>
+					</li>
+					<li>
+						<div class="name">IOS</div>
+						<div class="number">267</div>
+						<div class="rate">34%</div>
+					</li>
+					<li>
+						<div class="name">liunx</div>
+						<div class="number">267</div>
+						<div class="rate">34%</div>
+					</li>
+					<li>
+						<div class="name">MacOS</div>
+						<div class="number">267</div>
+						<div class="rate">34%</div>
+					</li>
+					<li>
+						<div class="name">未知</div>
+						<div class="number">267</div>
+						<div class="rate">34%</div>
+					</li>
+				</ul>
+			</div>
+			<!---->
+			<div class="foot">
+				<p>Copyright 2013-2018 www.wayboo.com AllRights Reserved.</p>
+				<p>信融科技 版权所有 京IPC备 13035649号-2</p>
+			</div>
+			<div class="loading">
+				<div class="arc"></div>
+				<h1 class="loading_h1"><span>加载中...</span></h1>
+			</div>
+		</div>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/moment.min.js"></script>
+		<script type="text/javascript" src="js/echarts.min.js"></script>
+		<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+		<script src="js/map.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/dateRange.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mIndex.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

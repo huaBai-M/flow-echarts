@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>流量宝运营数据分析</title>
+		 <link rel="shortcut icon" href="http://ad.wayboo.net.cn/common/land-page/images/logo.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="css/daterangepicker.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<style type="text/css">
+			#one,#tow {
+			    background: url(img/bg.jpg);
+			}
+			.moasFlowtITLE{
+				color: #FFF;
+				text-align: center;
+				font-size:60px;
+				display: none;
+				/*position: relative;*/
+				/*top: 55px;*/
+			}
+			#map{
+				position: relative;
+			}
+			.tooltipMap{
+				position: absolute;
+				background: rgba(0,0,0,0.5);
+				border-radius: 5px;
+				display: none;
+				padding: 5px;
+				font-size: 12px;
+				color: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="moasFlowtITLE">流量运营报告</h1>
+		<div class="moasFlow">
+			<div id="one">
+				
+				<div class="brokenLine clearfix">
+					<div class="brokenLine_title clearfix">
+						<div class="brokenLine_title_h1 ">
+							<i></i>
+							<div>
+								<h1>中工信融(北京)信息技术有限公司</h1>
+								<p>开通时间2018年10月7日</p>
+							</div>
+						</div>
+						<!---->
+						<div class="brokenLine_title_abt">
+							<a href="javascript:void(0)" class="action">全部</a>
+							<a href="javascript:void(0)">昨天</a>
+							<a href="javascript:void(0)">今天</a>
+							<a href="javascript:void(0)">最近七天</a>
+							<a href="javascript:void(0)">最近30天</a>
+						</div>
+	
+						<div class="brokenLine_title_form">
+							<i  class="iconfont icon-riqi"></i>
+							<input type="text" id="date-range" />
+						</div>
+						<div class="brokenLine_title_pfd" id="renderPdf">
+							<img src="img/dpf.png"/>
+							下载报告
+							<p>数据时间2019.01.29-20.19.01.21</p>
+						</div>
+					</div>
+					<!---->
+					<div class="brokenLine_body">
+						<ul class="brokenLine_body_list">
+							<li class="clearfix">
+								<div class="icon"><i class="iconfont icon-dianjiliang"></i></div>
+								<div class="text">
+									<p>点击量/次</p>
+									<h1>35,465</h1>
+								</div>
+							</li>
+							<li class="clearfix">
+								<div class="icon"><i class="iconfont icon-shangji"></i></div>
+								<div class="text">
+									<p>商机数/条</p>
+									<h1>1,258</h1>
+								</div>
+							</li>
+							<li class="clearfix">
+								<div class="icon"><i class="iconfont icon-kehuzhuanhuashuai"></i></div>
+								<div class="text">
+									<p>转化率/%</p>
+									<h1>33</h1>
+								</div>
+							</li>
+						</ul>
+						<div class="brokenLine_body_chart">
+							<div class="brokenLine_abt">
+								<a href="javascript:void(0)" id="brokenLineAbt">更新数据</a>
+							</div>
+							<div id="container"></div>
+						</div>
+					</div>
+				</div>
+				<!---->
+				
+				<div class="hotSpot">
+					<img src="img/mapbg.png" class="hotSpot_bg1"/>
+					<img src="img/mapbg.png" class="hotSpot_bg2"/>
+					<img src="img/mapbg.png" class="hotSpot_bg3"/>
+					<div class="hotSpot_body clearfix">
+						<div class="hotSpot_body_left">
+							<div class="title_body">
+								<p>Generalized diagram</p>
+								<h1>区域流量排名</h1>
+							</div>
+							<div class="hotSpot_body_List">
+								<div class="top">
+									<h2>全国</h2>
+									<h1>32,678</h1>
+									<p>总点击浏览量</p>
+								</div>
+								<div class="hotSpot_body_city">
+									<ol class="clearfix">
+										<li>省份/城市</li>
+										<li>点击次数</li>
+									</ol>
+									<div class="tableOne">
+										<ul class="clearfix">
+											<li class="clearfix">
+												<div>北京市</div>
+												<div>
+													1200次
+												</div>
+											</li>
+											<li class="clearfix">
+												<div>北京市</div>
+												<div>
+													1200次
+												</div>
+											</li>
+											<li class="clearfix">
+												<div>北京市</div>
+												<div>
+													1200次
+												</div>
+											</li>
+											<li class="clearfix">
+												<div>北京市</div>
+												<div>
+													1200次
+												</div>
+											</li>
+											<li class="clearfix">
+												<div>北京市</div>
+												<div>
+													1200次
+												</div>
+											</li>
+											<li class="clearfix">
+												<div>北京市</div>
+												<div>
+													1200次
+												</div>
+											</li>
+											<li class="clearfix">
+												<div>北京市</div>
+												<div>
+													1200次
+												</div>
+											</li>
+											<li class="clearfix">
+												<div>北京市</div>
+												<div>
+													1200次
+												</div>
+											</li>
+											<li class="clearfix">
+												<div>北京市</div>
+												<div>
+													1200次
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="hotSpot_body_right">
+							<div id="map" ></div>
+							
+						</div>
+						<dl class="searchRanking" id="sosuoid">
+							<dt>搜索词点击TOP10</dt>
+							<div class="searchRanking_border">
+								<dd><span>1</span>福特皮卡猛禽f150</dd>
+								<dd><span>2</span>福特皮卡</dd>
+								<dd><span>3</span>道奇公羊报价</dd>
+								<dd><span>4</span>福特皮卡报价</dd>
+								<dd><span>5</span>道奇公羊越野</dd>
+								<dd><span>6</span>皮卡车改装</dd>
+								<dd><span>7</span>道奇公羊皮卡</dd>
+								<dd><span>8</span>福特改装房车</dd>
+								<dd><span>9</span>皮卡</dd>
+								<dd><span>10</span>皮卡改装房车</dd>
+							</div>
+						</dl>
+					</div>
+				</div>
+				<div style="height: 1000px;" id="pdfShow"></div>
+<!--
+				<div class="hotSpot">
+					<div class="title_body">
+						<p>Keyword ranking</p>
+						<h1>搜索投放词排名数据</h1>
+					</div>
+					<dl class="searchRanking">
+						<dt></dt>
+						<dd>
+							<span>1</span>
+							<i>福特皮卡猛禽f150</i>
+							<div class="radius">
+								<p class="number">12562</p>
+								<div class="radius_box">
+									<p></p>
+								</div>
+							</div>
+						</dd>
+						<dd>
+							<span>2</span><i>福特皮卡</i>
+							<div class="radius">
+								<p class="number">12562</p>
+								<div class="radius_box">
+									<p></p>
+								</div>
+							</div>
+						</dd>
+						<dd>
+							<span>3</span><i>道奇公羊报价</i>
+							<div class="radius">
+								<p class="number">12562</p>
+								<div class="radius_box">
+									<p></p>
+								</div>
+							</div>
+						</dd>
+						<dd>
+							<span>4</span><i>福特皮卡报价</i>
+							<div class="radius">
+								<p class="number">12562</p>
+								<div class="radius_box">
+									<p></p>
+								</div>
+							</div>
+						</dd>
+						<dd>
+							<span>5</span><i>道奇公羊越野</i>
+							<div class="radius">
+								<p class="number">12562</p>
+								<div class="radius_box">
+									<p></p>
+								</div>
+							</div>
+						</dd>
+						<dd>
+							<span>6</span><i>皮卡车改装</i>
+							<div class="radius">
+								<p class="number">12562</p>
+								<div class="radius_box">
+									<p></p>
+								</div>
+							</div>
+						</dd>
+						<dd>
+							<span>7</span><i>道奇公羊皮卡</i>
+							<div class="radius">
+								<p class="number">12562</p>
+								<div class="radius_box">
+									<p></p>
+								</div>
+							</div>
+						</dd>
+						<dd>
+							<span>8</span><i>福特改装房车</i>
+							<div class="radius">
+								<p class="number">12562</p>
+								<div class="radius_box">
+									<p></p>
+								</div>
+							</div>
+						</dd>
+						<dd>
+							<span>9</span><i>皮卡</i>
+							<div class="radius">
+								<p class="number">12562</p>
+								<div class="radius_box">
+									<p></p>
+								</div>
+							</div>
+						</dd>
+						<dd>
+							<span>10</span><i>皮卡改装房车</i>
+							<div class="radius">
+								<p class="number">12562</p>
+								<div class="radius_box">
+									<p></p>
+								</div>
+							</div>
+						</dd>
+							
+						
+					</dl>
+				
+				</div>
+				-->
+			</div>
+			<div id="tow">
+				<div class="pieChart">
+					<div class="title_body">
+						<p>Keyword distribution</p>
+						<h1>搜索引擎分布</h1>
+					</div>
+					<div class="pieChart_body clearfix">
+						<div id="pieChart1"></div>
+						<div id="pieChart2"></div>
+					</div>
+				</div>
+				<!---->
+				<div class="radarChart">
+					<div class="title_body">
+						<p>Terminal browser</p>
+						<h1>终端浏览器占比</h1>
+					</div>
+					<div class="radarChart_body clearfix">
+						<div class="radarChart_body_box">
+						<ul class="radarChart_body_list">
+							<li>
+								Windows 7
+								<div class="clearfix">
+									<span class="number">267</span>
+									<span class="rate">34%</span>
+								</div>
+							</li>
+							<li>
+								Windows 10
+								<div class="clearfix">
+									<span class="number">267</span>
+									<span class="rate">34%</span>
+								</div>
+							</li>
+							<li>
+								Windows XP
+								<div class="clearfix">
+									<span class="number">267</span>
+									<span class="rate">34%</span>
+								</div>
+							</li>
+							<li>
+								Android
+								<div class="clearfix">
+									<span class="number">267</span>
+									<span class="rate">34%</span>
+								</div>
+							</li>
+							<li>
+								IOS
+								<div class="clearfix">
+									<span class="number">267</span>
+									<span class="rate">34%</span>
+								</div>
+							</li>
+							<li>
+								liunx
+								<div class="clearfix">
+									<span class="number">267</span>
+									<span class="rate">34%</span>
+								</div>
+							</li>
+							<li>
+								MacOS
+								<div class="clearfix">
+									<span class="number">267</span>
+									<span class="rate">34%</span>
+								</div>
+							</li>
+							<li>
+								未知
+								<div class="clearfix">
+									<span class="number">267</span>
+									<span class="rate">34%</span>
+								</div>
+							</li>
+							<li>
+								liunx
+								<div class="clearfix">
+									<span class="number">267</span>
+									<span class="rate">34%</span>
+								</div>
+							</li>
+							<li>
+								MacOS
+								<div class="clearfix">
+									<span class="number">267</span>
+									<span class="rate">34%</span>
+								</div>
+							</li>
+							<li>
+								未知
+								<div class="clearfix">
+									<span class="number">267</span>
+									<span class="rate">34%</span>
+								</div>
+							</li>
+						</ul>
+						</div>
+							
+						<!---->
+						<div class="radarChart_body_radar">
+							<div class="brokenLine_body_chart">
+							<div class="brokenLine_abt">
+								<a href="javascript:void(0)" id="radarChartAbt">更新数据</a>
+							</div>
+							<div id="container"></div>
+						</div>
+							<div id="radarChart"></div>
+						</div>
+					</div>
+				</div>
+				<!---->
+				<div class="foot">
+					<p>Copyright 2013-2018 www.wayboo.com AllRights Reserved.</p>
+					<p>信融科技 版权所有 京IPC备 13035649号-2</p>
+				</div>
+			</div>
+			<div id="canvasT"></div>
+		</div>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/moment.min.js"></script>
+		<script src="js/jquery.daterangepicker.js"></script>  
+		<script type="text/javascript" src="js/echarts.min.js"></script>
+		<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+		<script src="js/map.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/html2canvas.js"></script>
+    	<script type="text/javascript" src="js/jsPdf.debug.js"></script>
+    	<script type="text/javascript">
+    		$("#pdfShow").hide()
+		      var downPdf = document.getElementById("renderPdf");
+		      downPdf.onclick = function() {
+				$("#pdfShow").show()
+				$("#renderPdf").hide()
+				$(".moasFlowtITLE").show()
+		           html2canvas($("body"), {
+		              onrendered:function(canvas) {
+		              	save(canvas)
+		              	$("#pdfShow").hide();
+		              	$("#renderPdf").show();
+		              	$(".moasFlowtITLE").hide()
+		              }
+		          });
+		      }
+			function save(canvas){
+                  var contentWidth = canvas.width;
+                  var contentHeight = canvas.height;
+					
+                  //一页pdf显示html页面生成的canvas高度;
+                  var pageHeight = contentWidth / 595.28 * 841.89;
+                  //未生成pdf的html页面高度
+                  var leftHeight = contentHeight;
+                  //pdf页面偏移
+                  var position = 0;
+                  //a4纸的尺寸[595.28,841.89]，html页面生成的canvas在pdf中图片的宽高
+                  var imgWidth = 595.28;
+                  var imgHeight = 555.28/contentWidth * contentHeight;
+
+                  var pageData = canvas.toDataURL('image/jpeg', 1.0);
+
+                  var pdf = new jsPDF('', 'pt', 'a4');
+                  //有两个高度需要区分，一个是html页面的实际高度，和生成pdf的页面高度(841.89)
+                  //当内容未超过pdf一页显示的范围，无需分页
+                  if (leftHeight < pageHeight) {
+                      pdf.addImage(pageData, 'JPEG', 0, 0, imgWidth, imgHeight );
+                  } else {
+                      while(leftHeight > 0) {
+                          pdf.addImage(pageData, 'JPEG', 0, position, imgWidth, imgHeight)
+                          leftHeight -= pageHeight;
+                          position -= 841.89;
+                          //避免添加空白页
+                          if(leftHeight > 1) {
+                              pdf.addPage();
+                          }
+                      }
+                  }
+				$("#one").removeAttr("style")
+				$("#tow").removeAttr("style")
+				$("#canvasT").html("")
+                  pdf.save('content.pdf');
+              }
+			$(".searchRanking dd .radius_box p").eq(0).width("100%")
+			$(".searchRanking dd .radius_box p").eq(1).width("90%")
+			$(".searchRanking dd .radius_box p").eq(2).width("80%")
+			$(".searchRanking dd .radius_box p").eq(3).width("70%")
+			$(".searchRanking dd .radius_box p").eq(4).width("60%")
+			$(".searchRanking dd .radius_box p").eq(5).width("50%")
+			$(".searchRanking dd .radius_box p").eq(6).width("40%")
+			$(".searchRanking dd .radius_box p").eq(7).width("30%")
+			$(".searchRanking dd .radius_box p").eq(8).width("20%")
+			$(".searchRanking dd .radius_box p").eq(9).width("10%")
+    	</script>
+	</body>
+</html>
+ 
